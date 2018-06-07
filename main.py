@@ -9,10 +9,10 @@ import main_nn
 class MainHandler(tornado.web.RequestHandler):
 
     def post(self):
-        image = self.request.body()
+        image = self.request.body
         # with open('./image_repository/' + make_a_unique_name(), 'w') as f:
         #     f.write(urllib2.urlopen(your_url).read())
-        print('image')
+        print(image)
         self.write(json.dumps({'lol': "krasavchik"}))
 
 
