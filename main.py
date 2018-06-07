@@ -11,6 +11,8 @@ class MainHandler(tornado.web.RequestHandler):
     def post(self):
         self.set_header("Content-Type", "text/plain")
         self.request.body()
+        with open('./image_repository/' + make_a_unique_name(), 'w') as f:
+            f.write(urllib2.urlopen(your_url).read())
         self.write(json.dumps(main_nn.result))
 
         #sys.stdout.write(('POST REQUEST: {}'.format(self.request.body)))
