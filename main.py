@@ -7,28 +7,21 @@ import main_nn
 
 
 class MainHandler(tornado.web.RequestHandler):
-
     def post(self):
         image = self.request.body
-        # with open('./image_repository/' + make_a_unique_name(), 'w') as f:
-        #     f.write(urllib2.urlopen(your_url).read())
+
+        with open('./image_repository/frist.png' , 'w') as f:
+            f.write(image)
+        result = main_nn.prediction('./image_repository/frist.png')
         print(image)
-        self.write(json.dumps({'lol': "krasavchik"}))
 
+        self.write(json.dumps(result ))
 
-
-
-# This tells tornado where to find the static files
-setting = dict(
-    template_path=os.path.join(os.path.dirname(__file__), "templates"),
-    static_path=os.path.join(os.path.dirname(__file__), "static"),
-    debug=True
-)
 
 # r"/" == root website address
 apllication = tornado.web.Application([
     (r"/", MainHandler)
-], **setting)
+])
 
 # Start the server at port n
 if __name__ == "__main__":
