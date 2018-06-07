@@ -13,7 +13,7 @@ class MainHandler(tornado.web.RequestHandler):
         with open('./image_repository/frist.png' , 'w') as f:
             f.write(image)
         result = main_nn.prediction('./image_repository/frist.png')
-        print(image)
+        print(result)
 
         self.write(json.dumps(result ))
 
