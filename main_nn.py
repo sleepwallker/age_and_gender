@@ -13,7 +13,7 @@ WIDTH = 8
 
 IMAGE_SIZE = 64
 
-weight_file = get_file("age_and_gender.hdf5", cache_subdir="model", cache_dir=os.path.dirname(os.path.abspath(__file__)))
+weight_file = get_file("age_and_gender.hdf5", origin="", cache_subdir="model", cache_dir=os.path.dirname(os.path.abspath(__file__)))
 
 detector = dlib.get_frontal_face_detector()
 
