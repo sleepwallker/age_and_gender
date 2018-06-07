@@ -15,7 +15,7 @@ class MainHandler(tornado.web.RequestHandler):
         result = main_nn.prediction('./image_repository/frist.png')
         print(result)
 
-        self.write(json.dumps(result ))
+        self.write(json.dumps({'picture':result} ))
 
 
 # r"/" == root website address
