@@ -14,7 +14,7 @@ class MainHandler(tornado.web.RequestHandler):
             f.write(image)
         result = main_nn.prediction('./image_repository/frist.png')
         print(result)
-
+        self.set_header('Content-type', 'application/json')
         self.write(json.dumps({'picture':result} ))
 
 
