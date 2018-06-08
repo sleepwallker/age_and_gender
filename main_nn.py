@@ -4,7 +4,7 @@ import numpy
 
 from wide_resnet import WideResNet
 
-WEIGHT_FILE = "./models/age_and_gender.hdf5"
+WEIGHT_FILE = "./age_and_gender.hdf5"
 
 WIDTH = 8
 DEPTH = 16
