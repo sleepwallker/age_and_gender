@@ -49,7 +49,7 @@ def prediction(image_path):
         for i, d in enumerate(detected):
             age, gender = predicted_ages[i], "F" if predicted_genders[i][0] > 0.5 else "M"
 
-            result.append({'face': faces,
+            result.append({'face': [xw1, yw1, xw2, yw2],
                            'age': int(age),
                            'gender': gender})
     elif detected == False:
