@@ -10,12 +10,12 @@ class MainHandler(tornado.web.RequestHandler):
     def post(self):
         image = self.request.body
 
-        with open('./image_repository/frist.png' , 'w') as f:
+        with open('./image_repository/frist.png' , 'wb') as f:
             f.write(image)
         result = main_nn.prediction('./image_repository/frist.png')
         print(result)
         self.set_header('Content-type', 'application/json')
-        self.write(json.dumps({'picture':result} ))
+        self.write(json.dumps({'picture':result}))
 
 
 # r"/" == root website address
